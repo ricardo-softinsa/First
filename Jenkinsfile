@@ -50,8 +50,8 @@ pipeline{
 								script{
                                     FAILED_STAGE=env.STAGE_NAME
                                 }
-								bat 'gradlew clean'
-								bat 'gradlew build'
+								//bat 'gradlew clean'
+								bat 'gradlew assembleRelease'
 							}
 						}
 					}
