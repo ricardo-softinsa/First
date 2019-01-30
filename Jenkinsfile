@@ -50,7 +50,7 @@ pipeline{
 								script{
                                     FAILED_STAGE=env.STAGE_NAME
                                 }
-								bat 'gradlew assembleDebug'
+								bat 'gradlew build'
 								//echo "Build Code"
 							}
 						}
