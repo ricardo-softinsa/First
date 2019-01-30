@@ -50,8 +50,8 @@ pipeline{
 								script{
                                     FAILED_STAGE=env.STAGE_NAME
                                 }
-								//bat 'gradlew assembleRelease'
-								echo "Build Code"
+								bat 'gradlew assembleRelease'
+								//echo "Build Code"
 							}
 						}
 					}
@@ -146,3 +146,4 @@ pipeline{
         }
     }
 }
+
