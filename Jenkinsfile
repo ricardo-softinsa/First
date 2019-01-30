@@ -51,7 +51,7 @@ pipeline{
                                     FAILED_STAGE=env.STAGE_NAME
                                 }
 								//bat 'gradlew clean'
-								bat 'build_code.bat'
+								bat 'gradlew.bat assembleRelease'
 							}
 						}
 					}
