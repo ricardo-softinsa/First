@@ -22,10 +22,6 @@ allprojects {
     }
 }
 
-defaultConfig{
-   vectorDrawables.useSupportLibrary = true
-}
-
 task clean(type: Delete) {
     delete rootProject.buildDir
 }
