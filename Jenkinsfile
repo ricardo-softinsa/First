@@ -34,6 +34,17 @@ pipeline{
                                 //sleep 5
                             }
                         }
+                        stage("SonarQube Quality Gate") { 
+                            steps{
+                                script{
+                                    FAILED_STAGE=env.STAGE_NAME
+                                }
+                                echo "SonarQube Quality Gate"
+                                timeout(time: 1, unit: 'MINUTES') {  
+                                    waitForQualityGate abortPipeline: true
+                                }
+                            }
+                        }
 						stage('Build the Code'){
 							steps{
 								script{
@@ -82,6 +93,17 @@ pipeline{
                                 //sleep 5
                             }
                         }
+                        stage("SonarQube Quality Gate") { 
+                            steps{
+                                script{
+                                    FAILED_STAGE=env.STAGE_NAME
+                                }
+                                echo "SonarQube Quality Gate"
+                                timeout(time: 1, unit: 'MINUTES') {  
+                                    waitForQualityGate abortPipeline: true
+                                }
+                            }
+                        }
 						stage('Build the Code'){
 							steps{
 								script{
@@ -112,4 +134,5 @@ pipeline{
         }
     }
 }
+
 
