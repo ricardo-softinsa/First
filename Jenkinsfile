@@ -55,6 +55,7 @@ pipeline{
 							}
 						}
 					}
+					/*
 					post{
 
 						success{
@@ -64,6 +65,7 @@ pipeline{
 							slackSend color: 'danger', message: "FAILURE: ${currentBuild.fullDisplayName}\nANDROID\nFailed On: ${FAILED_STAGE}"
 						}
 					}
+					*/
 				}
 				stage('iOS'){
 					agent {
@@ -120,6 +122,7 @@ pipeline{
 							}
 						}
 					}
+					/*
 					post{
 
 						success{
@@ -129,10 +132,12 @@ pipeline{
 							slackSend color: 'danger', message: "FAILURE: ${currentBuild.fullDisplayName}\niOS\nFailed On: ${FAILED_STAGE}"
 						}
 					}
+					*/
 				}
 			}
 		}
 	}
+	/*
     post{
         success{
             slackSend color: 'good', message: "SUCCESS: ${currentBuild.fullDisplayName}\nInfo: ${env.BUILD_URL}"
@@ -141,5 +146,6 @@ pipeline{
             slackSend color: 'danger', message: "FAILURE: ${currentBuild.fullDisplayName}\nInfo: ${env.BUILD_URL}"
         }
     }
+    */
 }
 
