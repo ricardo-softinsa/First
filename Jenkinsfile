@@ -46,10 +46,10 @@ pipeline{
 					}
 					post{
 						success{
-							slackSend color: 'good', message: "SUCCESS: ${currentBuild.fullDisplayName}\niOS"
+							slackSend color: 'good', message: "SUCCESS: ${currentBuild.fullDisplayName}\nANDROID"
 						}
 						failure{
-							slackSend color: 'danger', message: "FAILURE: ${currentBuild.fullDisplayName}\niOS\nFailed On: ${FAILED_STAGE}"
+							slackSend color: 'danger', message: "FAILURE: ${currentBuild.fullDisplayName}\nANDROID\nFailed On: ${FAILED_STAGE}"
 						}
 					}
 				}
@@ -93,14 +93,23 @@ pipeline{
 					}
 					post{
 						success{
-							slackSend color: 'good', message: "SUCCESS: ${currentBuild.fullDisplayName}\nANDROID"
+							slackSend color: 'good', message: "SUCCESS: ${currentBuild.fullDisplayName}\niOS"
 						}
 						failure{
-							slackSend color: 'danger', message: "FAILURE: ${currentBuild.fullDisplayName}\nANDROID\nFailed On: ${FAILED_STAGE}"
+							slackSend color: 'danger', message: "FAILURE: ${currentBuild.fullDisplayName}\niOS\nFailed On: ${FAILED_STAGE}"
 						}
 					}
 				}
 			}
 		}
 	}
+    post{
+        success{
+            slackSend color: 'good', message: "SUCCESS: ${currentBuild.fullDisplayName}\nInfo: ${env.BUILD_URL}"
+        }
+        failure{
+            slackSend color: 'danger', message: "FAILURE: ${currentBuild.fullDisplayName}\nInfo: ${env.BUILD_URL}"
+        }
+    }
 }
+
