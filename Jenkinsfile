@@ -31,7 +31,7 @@ pipeline{
                                 withSonarQubeEnv('SonarServer') {
                                     sh "\"${scannerHome}/bin/sonar-scanner\""
                                 }
-                                //sleep 5
+                                sleep 5
                             }
                         }
                         stage("SonarQube Quality Gate") { 
@@ -90,7 +90,7 @@ pipeline{
                                 withSonarQubeEnv('SonarServer') {
                                     sh "\"${scannerHome}/bin/sonar-scanner\""
                                 }
-                                //sleep 5
+                                sleep 5
                             }
                         }
                         stage("SonarQube Quality Gate") { 
@@ -134,5 +134,3 @@ pipeline{
         }
     }
 }
-
-
