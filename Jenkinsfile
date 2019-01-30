@@ -56,9 +56,7 @@ pipeline{
 						}
 					}
 					post{
-						always{
-                            deleteDir()
-                        }
+
 						success{
 							slackSend color: 'good', message: "SUCCESS: ${currentBuild.fullDisplayName}\nANDROID"
 						}
@@ -123,9 +121,7 @@ pipeline{
 						}
 					}
 					post{
-                        always{
-                            deleteDir()
-                        }
+
 						success{
 							slackSend color: 'good', message: "SUCCESS: ${currentBuild.fullDisplayName}\niOS"
 						}
