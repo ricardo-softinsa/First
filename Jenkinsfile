@@ -52,7 +52,6 @@ pipeline{
                                 }
 								bat 'gradlew clean'
 								bat 'gradlew assembleRelease'
-								//echo "Build Code"
 							}
 						}
 					}
