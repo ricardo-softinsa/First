@@ -19,6 +19,7 @@ pipeline{
 								checkout scm
 							}
 						}
+						
 	                    stage('SonarQube analysis'){
                             environment{
                                 scannerHome = tool 'Scanner';
@@ -28,23 +29,30 @@ pipeline{
                                     FAILED_STAGE=env.STAGE_NAME
                                 }
                                 echo "SonarQube analysis"
+				    /*
                                 withSonarQubeEnv('SonarServer') {
                                     sh "\"${scannerHome}/bin/sonar-scanner\""
                                 }
-                                sleep 5
+				*/
+                                //sleep 5
                             }
                         }
+			
+						
                         stage("SonarQube Quality Gate") { 
                             steps{
                                 script{
                                     FAILED_STAGE=env.STAGE_NAME
                                 }
                                 echo "SonarQube Quality Gate"
+				    /*
                                 timeout(time: 1, unit: 'MINUTES') {  
                                     waitForQualityGate abortPipeline: true
                                 }
+				*/
                             }
                         }
+			
 						stage('Build the Code'){
 							steps{
 								script{
