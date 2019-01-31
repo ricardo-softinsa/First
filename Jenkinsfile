@@ -29,12 +29,10 @@ pipeline{
                                     FAILED_STAGE=env.STAGE_NAME
                                 }
                                 echo "SonarQube analysis"
-				    /*
                                 withSonarQubeEnv('SonarServer') {
                                     sh "\"${scannerHome}/bin/sonar-scanner\""
                                 }
-				*/
-                                //sleep 5
+                                sleep 5
                             }
                         }
 			
@@ -45,11 +43,9 @@ pipeline{
                                     FAILED_STAGE=env.STAGE_NAME
                                 }
                                 echo "SonarQube Quality Gate"
-				    /*
                                 timeout(time: 1, unit: 'MINUTES') {  
                                     waitForQualityGate abortPipeline: true
                                 }
-				*/
                             }
                         }
 			
@@ -58,9 +54,8 @@ pipeline{
 								script{
                                     FAILED_STAGE=env.STAGE_NAME
                                 }
-								sh 'ls'
-								//sh 'gradlew clean'
-								//sh 'gradlew build'
+								sh 'gradlew clean'
+								sh 'gradlew build'
 							}
 						}
 					}
