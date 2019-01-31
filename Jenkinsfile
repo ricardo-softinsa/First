@@ -51,7 +51,7 @@ pipeline{
                                     FAILED_STAGE=env.STAGE_NAME
                                 }
 								bat 'gradlew clean'
-								bat 'gradlew --version'
+								bat 'gradlew build'
 							}
 						}
 					}
