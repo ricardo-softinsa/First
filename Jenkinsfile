@@ -58,6 +58,7 @@ pipeline{
 								script{
                                     FAILED_STAGE=env.STAGE_NAME
                                 }
+								sh 'ls'
 								sh 'gradlew clean'
 								sh 'gradlew build'
 							}
